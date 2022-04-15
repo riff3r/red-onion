@@ -6,7 +6,6 @@ import { MenuContext } from "../../Home/Home";
 const Breakfast = () => {
   const [meals] = useContext(MenuContext);
 
-  console.log(meals);
   return (
     <Row>
       {meals

@@ -5,7 +5,11 @@
     "description": "How we dream about future",
     "price": "6.99",
     "category": "breakfast",
-    "image": "https://i.ibb.co/bQt51Zd/breakfast4.png"
+    "image": "https://i.ibb.co/bQt51Zd/breakfast4.png",
+    "extraImg": [
+      "https://i.ibb.co/tK3RXfS/lunch6.png",
+      "https://i.ibb.co/XLsXx44/dinner3.png"
+    ]
   },
   {
     "id": 102,

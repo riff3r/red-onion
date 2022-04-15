@@ -1,10 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "components/Layout/Header/Header";
 import { Route, Routes } from "react-router-dom";
-import useMeals from "./components/Hooks/useMeals";
 import Footer from "./components/Layout/Footer/Footer";
 import Home from "./components/Page/Home/Home";
 import Login from "./components/Page/Login/Login";
+import MealDetails from "./components/Page/MealDetails/MealDetails";
 import Breakfast from "./components/Page/Menu/Breakfast/Breakfast";
 import Dinner from "./components/Page/Menu/Dinner/Dinner";
 import Lunch from "./components/Page/Menu/Lunch/Lunch";
@@ -17,10 +17,12 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />}>
-          <Route path="breakfast" element={<Breakfast />}></Route>
+          <Route index element={<Breakfast />}></Route>
+          <Route index path="breakfast" element={<Breakfast />}></Route>
           <Route path="lunch" element={<Lunch />}></Route>
           <Route path="dinner" element={<Dinner />}></Route>
         </Route>
+        <Route path="/meal/:id" element={<MealDetails />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="*" element={<NotFound />} />
