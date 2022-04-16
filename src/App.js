@@ -10,6 +10,7 @@ import Dinner from "./components/Page/Menu/Dinner/Dinner";
 import Lunch from "./components/Page/Menu/Lunch/Lunch";
 import NotFound from "./components/Page/NotFound/NotFound";
 import SignUp from "./components/Page/SignUp/SignUp";
+import RequireAuth from "./components/Auth/RequireAuth/RequireAuth";
 
 function App() {
   return (
@@ -22,7 +23,14 @@ function App() {
           <Route path="lunch" element={<Lunch />}></Route>
           <Route path="dinner" element={<Dinner />}></Route>
         </Route>
-        <Route path="/meal/:id" element={<MealDetails />} />
+        <Route
+          path="/meal/:id"
+          element={
+            <RequireAuth>
+              <MealDetails />
+            </RequireAuth>
+          }
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="*" element={<NotFound />} />

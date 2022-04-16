@@ -4,11 +4,11 @@ import { useParams } from "react-router-dom";
 import useMeals from "../../Hooks/useMeals";
 
 const MealDetails = () => {
+  const [mainImage, setMainImage] = useState();
   const { id } = useParams();
   const [meals] = useMeals();
   const meal = meals.find((meal) => meal.id === +id);
 
-  const [mainImage, setMainImage] = useState(meal?.image);
   console.log(meal);
   useEffect(() => {
     setMainImage(meal?.image);
